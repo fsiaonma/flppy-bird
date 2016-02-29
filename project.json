@@ -1,0 +1,11 @@
+{
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 1,
+    "modules" : ["cocos2d"],
+    "jsList" : [
+        "./main.js",
+    ]
+}

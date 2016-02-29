@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello</title>
+    <script type="text/javascript" src="cocos2d-js-v3.3-lite.js" charset="UTF-8"></script>
+</head>
+<body>   
+    <canvas id="gameCanvas" width="450" height="600"></canvas>
+    <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./js/bird.js"></script>
+    <script type="text/javascript" src="./js/battle.js"></script>
+    <script type="text/javascript">
+          window.onload = function(){
+              cc.game.onStart = function(){
+                  //load resources
+                  cc.LoaderScene.preload([
+                    "imgs/bg.png",
+                    "imgs/bird.png",
+                    "imgs/pipeDown.png",
+                    "imgs/pipeUp.png"
+                  ], function () {
+                      cc.director.runScene(new MainScene());
+                  }, this);
+              };
+              cc.game.run("gameCanvas");
+          };
+    </script>
+</body>
+</html>
