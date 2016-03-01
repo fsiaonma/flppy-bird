@@ -84,7 +84,14 @@ var MainLayer = cc.Layer.extend({
 		}
 		var pumps = this._battle.getChildren();
 		for (var i = 0, len = pumps.length; i < len; ++i) {
-			if (cc.rectIntersectsRect(this._bird.getBoundingBox(), pumps[i].getBoundingBox())) {
+			var birdBox = this._bird.getBoundingBox();
+			var bBox = {
+				x: birdBox.x + birdBox.width / 3,
+				y: birdBox.y + birdBox.height / 3,
+				width: birdBox.width / 3,
+				height: birdBox.height / 3
+			}
+			if (cc.rectIntersectsRect(bBox, pumps[i].getBoundingBox())) {
 				flag = true;
 				break ;
 			}
